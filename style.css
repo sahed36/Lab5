@@ -1,0 +1,277 @@
+html {
+    scroll-behavior: smooth;
+}
+
+/* Aesthetic Light Green Studio Color Palette */
+:root {
+    --bg-base: #f7f9f7;          
+    --bg-surface: #ffffff;       
+    --bg-muted: #edf1ed;         
+    --text-main: #252a25;        
+    --text-muted: #5a625a;       
+    --accent-studio: #6b8c70;    
+    --accent-hover: #4e6b53;     
+    --border-line: #e1e7e1;      
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-base);
+    color: var(--text-main);
+    overflow-x: hidden;
+    letter-spacing: -0.01em;
+}
+
+/* Minimalist Structural Elements */
+.navbar-custom {
+    background-color: rgba(247, 249, 247, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-line);
+    transition: all 0.4s ease;
+}
+.navbar-custom .navbar-brand {
+    color: var(--text-main) !important;
+    letter-spacing: -0.03em;
+}
+.navbar-custom .nav-link {
+    color: var(--text-muted) !important;
+    font-size: 0.95rem;
+    font-weight: 500;
+    position: relative;
+}
+
+/* Hero Carousel */
+
+.hero-carousel, .carousel-inner, .carousel-item {
+    height: 600px; /* Increased height for premium framing */
+}
+
+.carousel-item {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+/* Deep Sage Green Ambient Overlay instead of basic black overlay */
+.carousel-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(37, 42, 37, 0.4) 0%, rgba(19, 26, 20, 0.85) 100%);
+    z-index: 1;
+}
+
+/* Fixed Center & Lower-Side Positioning Engine */
+.hero-content {
+    position: absolute;
+    bottom: 12%; /* Shifts layout safely to the lower region */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    padding: 0 20px;
+    z-index: 2;
+}
+
+/* Typographic Color Syncing (Dynamic Sage / Mint Theme) */
+.hero-content h1 {
+    color: #eef3ef; /* Soft linen white */
+    letter-spacing: -0.03em;
+    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+}
+
+.hero-content p.lead {
+    color: #a3bca6; /* Distinct complementary matching green-grey accent */
+    font-weight: 300;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Custom Green Active Indicators */
+.carousel-indicators [data-bs-target] {
+    background-color: var(--accent-studio);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.carousel-indicators .active {
+    background-color: #9cd4a7; /* Vibrant mint glow highlight */
+    width: 32px; /* Stretches pill out dynamically */
+    border-radius: 6px;
+    opacity: 1;
+}
+
+/* Custom Styled Green Carousel Control Arrows */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(107, 140, 112, 0.3);
+    padding: 24px;
+    border-radius: 50%;
+    backdrop-filter: blur(4px);
+    transition: all 0.3s ease;
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+    background-color: var(--accent-studio);
+    transform: scale(1.1);
+}
+
+/* Layout Sections */
+section {
+    padding: 100px 0;
+}
+.section-alt {
+    background-color: var(--bg-muted);
+}
+.section-title {
+    letter-spacing: -0.03em;
+    color: var(--text-main);
+    position: relative;
+    display: inline-block;
+    margin-bottom: 60px;
+}
+
+/* Interactive Showcase Cards */
+.card {
+    border: 1px solid var(--border-line);
+    border-radius: 16px;
+    background-color: var(--bg-surface);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: hidden;
+}
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 16px 35px rgba(107, 140, 112, 0.12);
+    border-color: rgba(107, 140, 112, 0.4);
+}
+.card img {
+    height: 190px;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+.card:hover img {
+    transform: scale(1.06);
+}
+
+/* Dynamic Infocards */
+.edu-box {
+    border: 1px solid rgba(0,0,0,0.06);
+    border-radius: 12px;
+    text-align: center;
+    padding: 30px 20px;
+    background-color: var(--bg-surface);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+}
+.edu-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+.edu-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+.edu-box .edu-degree {
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+    color: #2b2d2f;
+}
+.edu-box .edu-gpa {
+    font-weight: 700;
+    font-size: 1.15rem;
+    margin-bottom: 12px;
+}
+.edu-box .edu-institution {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: #111111;
+    margin-bottom: 15px;
+}
+.edu-box .edu-desc {
+    font-size: 0.88rem;
+    color: #7a807b;
+    line-height: 1.4;
+}
+
+/* Color Variations */
+.edu-blue { background: linear-gradient(to bottom, #e3f2fd, #f7f9f7); }
+.edu-blue::before { background-color: #2196f3; }
+.edu-blue .edu-gpa { color: #2196f3; }
+
+.edu-green { background: linear-gradient(to bottom, #e8f5e9, #f7f9f7); }
+.edu-green::before { background-color: #4caf50; }
+.edu-green .edu-gpa { color: #4caf50; }
+
+.edu-orange { background: linear-gradient(to bottom, #fff3e0, #f7f9f7); }
+.edu-orange::before { background-color: #ff9800; }
+.edu-orange .edu-gpa { color: #e65100; }
+
+.edu-purple { background: linear-gradient(to bottom, #f3e5f5, #f7f9f7); }
+.edu-purple::before { background-color: #9c27b0; }
+.edu-purple .edu-gpa { color: #9c27b0; }
+
+/* Accordion */
+.accordion-item {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-line);
+    border-radius: 12px !important;
+    margin-bottom: 12px;
+    overflow: hidden;
+}
+.accordion-button {
+    color: var(--text-main);
+    font-weight: 600;
+}
+.accordion-button:not(.collapsed) {
+    background-color: var(--bg-base);
+    color: var(--accent-studio);
+}
+
+.form-control {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-line);
+    border-radius: 8px;
+    padding: 12px;
+}
+
+.btn-custom {
+    background-color: var(--accent-studio);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    padding: 12px 32px;
+    transition: all 0.3s ease;
+}
+.btn-custom:hover {
+    background-color: var(--accent-hover);
+    color: #ffffff;
+    transform: translateY(-3px);
+}
+
+footer {
+    background-color: var(--text-main);
+    color: #9eb0a0;
+    padding: 40px;
+    text-align: center;
+}
+
+.profile-img-container {
+    border-radius: 24px;
+    overflow: hidden;
+}
